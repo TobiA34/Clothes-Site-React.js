@@ -134,8 +134,17 @@ header {
     cursor: pointer;
 }
 
+.heart{
+  position: absolute;
+  top: 5%;
+  left: 85%;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+ }
+
 .hero-img{
-  width: 100%;
+  width: 300px;
   height: 300px;
 }
 
