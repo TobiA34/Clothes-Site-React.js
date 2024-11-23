@@ -1,0 +1,155 @@
+:root {
+  --dark-green: #2E4A23; /* Header, primary buttons */
+  --light-green: #46A753; /* Buy now button */
+  --beige-background: #FDF1E0; /* Promo banner background */
+  --text-black: #333333; /* Main text color */
+  --light-gray: #F4F4F4; /* Filter section background */
+  --white: #FFFFFF; /* Card backgrounds, main backgrounds */
+  --gray: #D1D5DB; /* Border and icon color */
+  --blue-highlight: #356DCC; /* Blue highlight (e.g., product details) */
+  --red-price: #FF6B6B; /* Red prices */
+}
+
+
+.beige {
+  background: var(--beige-background);
+}
+
+.green {
+  background: var(--dark-green);
+  padding: 10px;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.w-8 {
+width: 80%;
+}
+.w-85 {
+width: 85%;
+}
+
+.w-90 {
+width: 90%;
+}
+
+.mr-6{
+  margin-right: 60px;
+}
+.mr-7{
+  margin-right: 70px;
+
+}
+
+.mr-8{
+  margin-right: 80px;
+}
+
+i,a,li {
+  color: var(--text-black);
+  
+}
+
+li a {
+  text-decoration: none;
+  list-style: none;
+   
+}
+
+
+span {
+  text-decoration: none;
+}
+
+.navbar a {
+  text-decoration: none; /* Removes underline */
+  color: #000; /* Sets the text color (adjust as needed) */
+}
+
+.navbar a:hover {
+  text-decoration: none; /* Keeps underline removed on hover */
+  color: #007bff; /* Optional: Changes link color on hover (adjust as needed) */
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2e4735; /* Dark green */
+    color: white;
+    padding: 10px 20px;
+    font-size: 14px;
+}
+
+.left {
+    flex: 1;
+    text-align: left;
+}
+
+.center {
+    flex: 2;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.right {
+    flex: 1;
+    text-align: right;
+}
+
+.phone {
+    color: #fff;
+}
+
+.offer {
+    color: #f5f5f5;
+}
+
+.divider {
+    margin: 0 5px;
+    color: #ccc;
+}
+
+.shop-now {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.shop-now:hover {
+    text-decoration: underline;
+}
+
+.language, .location {
+    background-color: #2e4735;
+    color: white;
+    border: 1px solid #ccc;
+    padding: 5px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.hero-img{
+  width: 100%;
+  height: 300px;
+}
+
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
