@@ -1,5 +1,6 @@
-import React from 'react'
- import "bootstrap-icons/font/bootstrap-icons.css"; // Import Bootstrap Icons
+import React from "react";
+import "bootstrap/dist/css/bootstrap.min.css"; // Import Bootstrap CSS
+import "bootstrap-icons/font/bootstrap-icons.css"; // Import Bootstrap Icons
 
 function NavbarComponent() {
   return (
@@ -24,6 +25,8 @@ function NavbarComponent() {
           </select>
         </div>
       </header>
+
+      {/* Navbar */}
       <nav className="navbar navbar-expand-lg px-4 py-2">
         <div className="container-fluid">
           {/* Brand Logo */}
@@ -105,4 +108,4 @@ function NavbarComponent() {
   );
 }
 
-export default NavbarComponent
+export default NavbarComponent;
