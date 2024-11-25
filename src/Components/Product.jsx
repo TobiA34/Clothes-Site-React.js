@@ -1,7 +1,11 @@
 import React from "react";
 import ReactStars from "react-rating-stars-component";
+import { Link } from "react-router-dom";
+import { useParams } from "react-router";
 
 function Product({ item }) {
+  const id = useParams();
+
   return (
     <div className="col" key={item.id}>
       <div className="card">
@@ -11,12 +15,14 @@ function Product({ item }) {
         </div>
 
         {/* Product Image */}
-        <img
-          src={item.image}
-          className="card-img-top mt-2"
-          alt={item.name}
-          style={{ height: "200px", objectFit: "contain" }}
-        />
+        <Link to={`/single-product/${item.id}`} className="remove-styles">
+          <img
+            src={item.image}
+            className="card-img-top mt-2"
+            alt={item.name}
+            style={{ height: "200px", objectFit: "contain" }}
+          />
+        </Link>
 
         {/* Card Body */}
         <div className="card-body">

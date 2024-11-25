@@ -1,11 +1,13 @@
-import "./App.css"; // Custom styles
-import HeroCard from "./Components/HeroCard";
+ import HeroCard from "./Components/HeroCard";
 import NavbarComponent from "./Components/NavbarComponent";
 import FilterComponent from "./Components/FilterComponent";
 import { useState, useEffect } from "react"; // Use `useEffect` for API calls
 import Product from "./Components/Product";
 import axios from "axios";
 import FooterComponent from "./Components/FooterComponent";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./Components/Screens/Home";
+import ProductsDetailed from "./Components/Screens/ProductsDetailed.jsx";
 
 function App() {
   const [products, setProducts] = useState([]); // Original product list
@@ -34,33 +36,18 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <div className="container-fluid vh-100 p-4">
-        {/* Navbar */}
-        <NavbarComponent onSearch={handleSearch} />
-        {/* Pass handleSearch as prop */}
-        {/* Hero Card */}
-        <HeroCard />
-        {/* Filter */}
-        <FilterComponent
-          products={products}  
-          onFilterOrSort={handleFilterOrSort}  
-        />
-        {/* Product List Header */}
-        <h1 className="text-start mt-4">Latest Products</h1>
-        {/* Card Grid */}
-        <div className="row row-cols-1 row-cols-md-3 g-4 mt-4">
-          {filteredProducts.length > 0 ? (
-            filteredProducts.map((item) => (
-              <Product key={item.id} item={item} />  
-            ))
-          ) : (
-            <p>No products available</p>
-          )}
-        </div>
-        <FooterComponent />
-      </div>
-    </div>
+     <BrowserRouter>
+      <Routes>
+        {/* Home Page */}
+        <Route path="/" element={<Home />} />
+
+        {/* Product Details Page */}
+        <Route path="/single-product/:id" element={<ProductsDetailed />} />
+
+        {/* 404 Page */}
+        <Route path="*" element={<div>404 Not Found</div>} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
