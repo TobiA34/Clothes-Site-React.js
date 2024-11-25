@@ -141,6 +141,7 @@ header {
   border-radius: 50%;
   height: 40px;
   width: 40px;
+  background: white;
  }
 
 .hero-img{
@@ -148,6 +149,61 @@ header {
   height: 300px;
 }
 
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px; /* Adjust the width as needed */
+}
+
+/* Category Pill Styles */
+.category-pill {
+  display: inline-block;
+  background-color: var(--dark-green); 
+  color: white; /* Darker text color for contrast */
+  font-size: 0.9rem; /* Slightly smaller text */
+  font-weight: 600; /* Bold text for emphasis */
+  border-radius: 20px; /* Smooth pill shape */
+  padding: 8px 15px; /* Inner padding for space */
+  max-width: 150px; /* Prevent pill from being too large */
+  white-space: nowrap; /* Prevent text wrapping */
+  overflow: hidden; /* Ensure no overflow */
+  text-overflow: ellipsis; /* Add ellipsis for long categories */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth effects */
+}
+
+/* Hover Effect */
+.category-pill:hover {
+  background-color: var(--dark-green); /* Slightly darker pink */
+  transform: translateY(-2px); /* Subtle lift effect */
+  cursor: pointer; /* Show pointer on hover */
+}
+
+
+/* App.css */
+
+.filter-container {
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+
+.dropdown-menu {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.btn {
+  font-size: 16px;
+  padding: 10px 15px;
+}
+
+.filter-container .dropdown-toggle {
+  width: 180px;
+  text-align: center;
+}
 
 body {
   margin: 0;

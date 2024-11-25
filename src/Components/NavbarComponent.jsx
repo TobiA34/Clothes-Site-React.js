@@ -1,8 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css"; // Import Bootstrap CSS
 import "bootstrap-icons/font/bootstrap-icons.css"; // Import Bootstrap Icons
 
-function NavbarComponent() {
+function NavbarComponent({ onSearch }) {
+  const [searchQuery, setSearchQuery] = useState("");  
+
+   const handleInputChange = (event) => {
+    const query = event.target.value;
+    setSearchQuery(query); 
+    onSearch(query); 
+  };
+
   return (
     <div>
       <header className="header">
@@ -27,7 +35,7 @@ function NavbarComponent() {
       </header>
 
       {/* Navbar */}
-      <nav className="navbar navbar-expand-lg px-4 py-2">
+      <nav className="navbar navbar-expand-lg navbar-light px-4 py-2">
         <div className="container-fluid">
           {/* Brand Logo */}
           <a className="navbar-brand" href="#">
@@ -35,7 +43,7 @@ function NavbarComponent() {
               src="https://img.icons8.com/color/48/000000/shopping-cart--v1.png"
               alt="Logo"
             />
-            <span className="fw-bold">Shopcart</span>
+            <span className="fw-bold">Trendify</span>
           </a>
 
           {/* Toggle Button for Mobile View */}
@@ -86,18 +94,20 @@ function NavbarComponent() {
                 type="search"
                 placeholder="Search Product"
                 aria-label="Search"
+                value={searchQuery}  
+                onChange={handleInputChange}  
               />
-              <button className="btn btn-search" type="submit">
+              <button className="btn btn-search" type="button">
                 <i className="bi bi-search"></i>
               </button>
             </form>
 
             {/* Account and Cart Icons */}
-            <div className="navbar-icons">
-              <a href="#" className="me-3">
+            <div className="navbar-icons d-flex align-items-center">
+              <a href="#" className="me-3 d-flex align-items-center">
                 <i className="bi bi-person"></i> <span>Account</span>
               </a>
-              <a href="#">
+              <a href="#" className="d-flex align-items-center">
                 <i className="bi bi-cart"></i> Cart
               </a>
             </div>

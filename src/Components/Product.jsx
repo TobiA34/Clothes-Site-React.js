@@ -1,45 +1,70 @@
-import {useState} from 'react'
+import React from "react";
 import ReactStars from "react-rating-stars-component";
-function Product({item}) {
- 
+
+function Product({ item }) {
   return (
-    <div>
-      <div className="col" key={item.id}>
-        <div className="card">
-          <div className="bg-light p-3  heart d-flex align-items-center justify-content-center">
-            <i className="bi bi-suit-heart fs-5"></i>
+    <div className="col" key={item.id}>
+      <div className="card">
+        {/* Heart Icon */}
+        <div className="bg-light p-3 heart d-flex align-items-center justify-content-center">
+          <i className="bi bi-suit-heart fs-5"></i>
+        </div>
+
+        {/* Product Image */}
+        <img
+          src={item.image}
+          className="card-img-top mt-2"
+          alt={item.name}
+          style={{ height: "200px", objectFit: "contain" }}
+        />
+
+        {/* Card Body */}
+        <div className="card-body">
+          {/* Title and Price */}
+          <div className="d-flex justify-content-between">
+            <h5
+              className="card-title fs-5 text-truncate"
+              style={{ maxWidth: "200px" }}
+              title={item.title}
+            >
+              <strong>{item.title}</strong>
+            </h5>
+            <p className="card-text fs-4">
+              <strong>£{item.price ? item.price.toFixed(2) : "0.00"}</strong>
+            </p>
           </div>
-          <img
-            src="https://via.placeholder.com/150"
-            className="card-img-top"
-            alt={item.name}
-          />
-          <div className="card-body border-none">
-            <div className="d-flex justify-content-between">
-              <h5 className="card-title fs-4">
-                <strong>{item.name}</strong>
-              </h5>
-              <p className="card-text fs-4">
-                <strong>{item.price.toFixed(2)}</strong>$
-              </p>
-            </div>
-            <div className="d-flex mt-3 flex-column align-items-start">
-              <p>{item.desc}</p>
+
+          {/* Rating */}
+          <div className="d-flex align-items-center justify-content-start mt-3 gap-2">
+            <div>
               <ReactStars
+                count={5}
                 size={24}
-                value={item.rating} // this is the value for filled stars
+                value={item.rating?.rate || 0}
+                isHalf={true}
+                edit={false}
                 activeColor="#FFD700"
               />
             </div>
-
-            <div className="d-flex my-3">
-              <a
-                href="#"
-                className="btn btn-light rounded-5 border border-2 border-dark"
-              >
-                Add to Cart
-              </a>
+            <div>
+              <p className="mb-0">({item.rating?.count || 0})</p>
             </div>
+          </div>
+
+          {/* Add to Cart */}
+          <div className="d-flex flex-column my-3">
+            <span
+              className="my-3 category-pill text-center p-2"
+              title={`Category: ${item.category}`}
+            >
+              {item.category}
+            </span>
+            <a
+              href="#"
+              className="btn btn-light rounded-5 border border-2 border-dark w-50"
+            >
+              Add to Cart
+            </a>
           </div>
         </div>
       </div>
@@ -47,4 +72,4 @@ function Product({item}) {
   );
 }
 
-export default Product
+export default Product;
