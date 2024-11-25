@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css"; // Import Bootstrap CSS
 import "bootstrap-icons/font/bootstrap-icons.css"; // Import Bootstrap Icons
+import { Link } from "react-router-dom";
 
 function NavbarComponent({ onSearch }) {
   const [searchQuery, setSearchQuery] = useState("");  
@@ -43,7 +44,9 @@ function NavbarComponent({ onSearch }) {
               src="https://img.icons8.com/color/48/000000/shopping-cart--v1.png"
               alt="Logo"
             />
-            <span className="fw-bold">Trendify</span>
+            <span className="fw-bold">
+              <Link to="/">Trendify</Link>
+            </span>
           </a>
 
           {/* Toggle Button for Mobile View */}
@@ -94,8 +97,8 @@ function NavbarComponent({ onSearch }) {
                 type="search"
                 placeholder="Search Product"
                 aria-label="Search"
-                value={searchQuery}  
-                onChange={handleInputChange}  
+                value={searchQuery}
+                onChange={handleInputChange}
               />
               <button className="btn btn-search" type="button">
                 <i className="bi bi-search"></i>

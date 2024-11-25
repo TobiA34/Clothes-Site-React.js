@@ -180,6 +180,23 @@ header {
 }
 
 
+.remove-styles {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.truncated-text {
+  white-space: nowrap;           /* Prevents text from wrapping to a new line */
+  overflow: hidden;              /* Hides the overflowing text */
+  text-overflow: ellipsis;       /* Adds the ellipsis (...) */
+  max-width: 200px;              /* You can adjust this width based on your layout */
+}
+
+
+.h7 {
+  font-size: 15px;
+}
 /* App.css */
 
 .filter-container {
