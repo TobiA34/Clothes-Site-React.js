@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css"; // Import Bootstrap CSS
 import "bootstrap-icons/font/bootstrap-icons.css"; // Import Bootstrap Icons
 import { Link } from "react-router-dom";
-
+ 
 function NavbarComponent({ onSearch }) {
   const [searchQuery, setSearchQuery] = useState("");  
 
@@ -111,7 +111,9 @@ function NavbarComponent({ onSearch }) {
                 <i className="bi bi-person"></i> <span>Account</span>
               </a>
               <a href="#" className="d-flex align-items-center">
-                <i className="bi bi-cart"></i> Cart
+                <Link to="/cart">
+                  <i className="bi bi-cart"></i> Cart
+                </Link>
               </a>
             </div>
           </div>

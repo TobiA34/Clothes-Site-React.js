@@ -65,13 +65,14 @@ function Product({ item }) {
             >
               {item.category}
             </span>
-            <a
-              href="#"
-              className="btn btn-light rounded-5 border border-2 border-dark w-50"
-            >
-              Add to Cart
-            </a>
-          </div>
+            
+              <a
+                href="#"
+                className="btn btn-light rounded-5 border border-2 border-dark w-50"
+              >
+                Add to Cart
+              </a>
+           </div>
         </div>
       </div>
     </div>
