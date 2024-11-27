@@ -8,6 +8,8 @@ import FooterComponent from "./Components/FooterComponent";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./Components/Screens/Home";
 import ProductsDetailed from "./Components/Screens/ProductsDetailed.jsx";
+import Cart from "./Components/Screens/Cart";
+import Checkout from "./Components/Screens/Checkout";
 
 function App() {
   const [products, setProducts] = useState([]); // Original product list
@@ -36,10 +38,12 @@ function App() {
   };
 
   return (
-     <BrowserRouter>
+    <BrowserRouter>
       <Routes>
         {/* Home Page */}
         <Route path="/" element={<Home />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/checkout" element={<Checkout />} />
 
         {/* Product Details Page */}
         <Route path="/single-product/:id" element={<ProductsDetailed />} />

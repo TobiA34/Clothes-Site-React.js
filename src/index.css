@@ -24,15 +24,72 @@
   text-decoration: none;
 }
 
-.w-8 {
-width: 80%;
+.w-20 {
+  width: 20%;
 }
+
+.w-25 {
+  width: 25%;
+}
+
+.w-30 {
+  width: 30%;
+}
+
+.w-35 {
+  width: 35%;
+}
+
+.w-40 {
+  width: 40%;
+}
+
+.w-45 {
+  width: 45%;
+}
+
+.w-50 {
+  width: 50%;
+}
+
+.w-55 {
+  width: 55%;
+}
+
+.w-60 {
+  width: 60%;
+}
+
+.w-65 {
+  width: 65%;
+}
+
+.w-70 {
+  width: 70%;
+}
+
+.w-75 {
+  width: 75%;
+}
+
+.w-80 {
+  width: 80%;
+}
+
 .w-85 {
-width: 85%;
+  width: 85%;
 }
 
 .w-90 {
-width: 90%;
+  width: 90%;
+}
+
+.w-95 {
+  width: 95%;
+}
+
+.w-100 {
+  width: 100%;
 }
 
 .mr-6{
@@ -199,6 +256,7 @@ header {
 }
 /* App.css */
 
+
 .filter-container {
   padding: 20px;
   background-color: #f8f9fa;
@@ -220,6 +278,33 @@ header {
 .filter-container .dropdown-toggle {
   width: 180px;
   text-align: center;
+}
+
+.absolute {
+  position: absolute;
+  top: 21.2%;
+  left: 76%;
+}
+
+.bg-none{
+  background: none;
+}
+
+.payment-card {
+  height: 30px;
+}
+
+.selected {
+  border: 2px solid #007bff; /* Blue border for the selected button */
+  border-radius: 8px;       /* Rounded edges */
+  padding: 5px;            /* Space between the image and border */
+  background-color: #f0f8ff; /* Light blue background */
+}
+
+.h-40 {
+  height: 58px;
+  border-radius: 32px;
+  width: 12%;
 }
 
 body {
