@@ -301,6 +301,11 @@ header {
   background-color: #f0f8ff; /* Light blue background */
 }
 
+#map {
+  width: 100px;
+  height: 100px;
+}
+
 .h-40 {
   height: 58px;
   border-radius: 32px;

@@ -2,14 +2,24 @@ import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css"; // Import Bootstrap CSS
 import "bootstrap-icons/font/bootstrap-icons.css"; // Import Bootstrap Icons
 import { Link } from "react-router-dom";
- 
-function NavbarComponent({ onSearch }) {
-  const [searchQuery, setSearchQuery] = useState("");  
+import { useAuth } from "../context/AuthContext";
+import { useNavigate } from "react-router";
 
-   const handleInputChange = (event) => {
+function NavbarComponent({ onSearch }) {
+  const [searchQuery, setSearchQuery] = useState("");
+  const { authState, logout } = useAuth(); // Use authState from context to check if the user is logged in
+
+  const navigate = useNavigate();
+
+  const handleInputChange = (event) => {
     const query = event.target.value;
-    setSearchQuery(query); 
-    onSearch(query); 
+    setSearchQuery(query);
+    onSearch(query);
+  };
+
+  const handleLogOut = () => {
+    logout(); // Clear auth state
+    navigate("/"); // Redirect to home page
   };
 
   return (
@@ -66,9 +76,11 @@ function NavbarComponent({ onSearch }) {
           <div className="collapse navbar-collapse" id="navbarContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <a className="nav-link" href="#">
-                  Categories
-                </a>
+                <Link>
+                  <a className="nav-link" href="#">
+                    Categories
+                  </a>
+                </Link>
               </li>
               <li className="nav-item">
                 <a className="nav-link" href="#">
@@ -105,11 +117,38 @@ function NavbarComponent({ onSearch }) {
               </button>
             </form>
 
-            {/* Account and Cart Icons */}
+            {/* Account, Login, Register, Cart Icons */}
             <div className="navbar-icons d-flex align-items-center">
-              <a href="#" className="me-3 d-flex align-items-center">
-                <i className="bi bi-person"></i> <span>Account</span>
-              </a>
+              {authState.token ? ( // Check if user is logged in
+                <>
+                  <Link to="/account">
+                    <a href="#" className="me-3 d-flex align-items-center">
+                      <i className="bi bi-person"></i> <span>Account</span>
+                    </a>
+                  </Link>
+                  <button
+                    className="me-3 d-flex align-items-center btn btn-link"
+                    onClick={handleLogOut} // Log out the user
+                  >
+                    <i className="bi bi-box-arrow-right"></i>{" "}
+                    <span>Logout</span>
+                  </button>
+                </>
+              ) : (
+                <>
+                  <Link to="/login">
+                    <a href="#" className="me-3 d-flex align-items-center">
+                      <i className="bi bi-person"></i> <span>Login</span>
+                    </a>
+                  </Link>
+                  <Link to="/register">
+                    <a href="#" className="me-3 d-flex align-items-center">
+                      <i className="bi bi-person"></i> <span>Register</span>
+                    </a>
+                  </Link>
+                </>
+              )}
+
               <a href="#" className="d-flex align-items-center">
                 <Link to="/cart">
                   <i className="bi bi-cart"></i> Cart
