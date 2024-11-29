@@ -1,7 +1,9 @@
  import HeroCard from "./Components/HeroCard";
 import NavbarComponent from "./Components/NavbarComponent";
 import FilterComponent from "./Components/FilterComponent";
-import { useState, useEffect } from "react"; // Use `useEffect` for API calls
+import { useState, useEffect } from "react"; 
+import { AuthProvider } from './context/AuthContext';  
+
 import Product from "./Components/Product";
 import axios from "axios";
 import FooterComponent from "./Components/FooterComponent";
@@ -10,6 +12,11 @@ import Home from "./Components/Screens/Home";
 import ProductsDetailed from "./Components/Screens/ProductsDetailed.jsx";
 import Cart from "./Components/Screens/Cart";
 import Checkout from "./Components/Screens/Checkout";
+import Login from "./Components/Screens/Login";
+import Register from "./Components/Screens/Register";
+import Account from "./Components/Screens/Account";
+import Categories from "./Components/Screens/Categories";
+
 
 function App() {
   const [products, setProducts] = useState([]); // Original product list
@@ -38,20 +45,26 @@ function App() {
   };
 
   return (
-    <BrowserRouter>
-      <Routes>
-        {/* Home Page */}
-        <Route path="/" element={<Home />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/checkout" element={<Checkout />} />
+    <AuthProvider>
+      <BrowserRouter>
+        <Routes>
+          {/* Home Page */}
+          <Route path="/" element={<Home />} />
+          <Route path="/account" element={<Account />} />
+          <Route path="/categories" element={<Categories />} />
 
-        {/* Product Details Page */}
-        <Route path="/single-product/:id" element={<ProductsDetailed />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/checkout" element={<Checkout />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/Register" element={<Register />} />
+          {/* Product Details Page */}
+          <Route path="/single-product/:id" element={<ProductsDetailed />} />
 
-        {/* 404 Page */}
-        <Route path="*" element={<div>404 Not Found</div>} />
-      </Routes>
-    </BrowserRouter>
+          {/* 404 Page */}
+          <Route path="*" element={<div>404 Not Found</div>} />
+        </Routes>
+      </BrowserRouter>
+    </AuthProvider>
   );
 }
 
