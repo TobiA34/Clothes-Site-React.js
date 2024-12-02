@@ -210,30 +210,30 @@ header {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-width: 200px; /* Adjust the width as needed */
+  max-width: 200px;  
 }
 
 /* Category Pill Styles */
 .category-pill {
   display: inline-block;
   background-color: var(--dark-green); 
-  color: white; /* Darker text color for contrast */
-  font-size: 0.9rem; /* Slightly smaller text */
-  font-weight: 600; /* Bold text for emphasis */
-  border-radius: 20px; /* Smooth pill shape */
-  padding: 8px 15px; /* Inner padding for space */
-  max-width: 150px; /* Prevent pill from being too large */
-  white-space: nowrap; /* Prevent text wrapping */
-  overflow: hidden; /* Ensure no overflow */
-  text-overflow: ellipsis; /* Add ellipsis for long categories */
-  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth effects */
+  color: white;  
+  font-size: 0.9rem; 
+  font-weight: 600;  
+  border-radius: 20px;  
+  padding: 8px 15px;  
+  max-width: 150px;  
+  white-space: nowrap;  
+  overflow: hidden;  
+  text-overflow: ellipsis;  
+  transition: background-color 0.3s ease, transform 0.2s ease;  
 }
 
 /* Hover Effect */
 .category-pill:hover {
-  background-color: var(--dark-green); /* Slightly darker pink */
-  transform: translateY(-2px); /* Subtle lift effect */
-  cursor: pointer; /* Show pointer on hover */
+  background-color: var(--dark-green);  
+  transform: translateY(-2px); 
+  cursor: pointer;  
 }
 
 
@@ -244,10 +244,10 @@ header {
 }
 
 .truncated-text {
-  white-space: nowrap;           /* Prevents text from wrapping to a new line */
-  overflow: hidden;              /* Hides the overflowing text */
-  text-overflow: ellipsis;       /* Adds the ellipsis (...) */
-  max-width: 200px;              /* You can adjust this width based on your layout */
+  white-space: nowrap;          
+  overflow: hidden;            
+  text-overflow: ellipsis;       
+  max-width: 200px;            
 }
 
 
@@ -295,10 +295,10 @@ header {
 }
 
 .selected {
-  border: 2px solid #007bff; /* Blue border for the selected button */
-  border-radius: 8px;       /* Rounded edges */
-  padding: 5px;            /* Space between the image and border */
-  background-color: #f0f8ff; /* Light blue background */
+  border: 2px solid #007bff;  
+  border-radius: 8px;        
+  padding: 5px;            
+  background-color: #f0f8ff; 
 }
 
 #map {
@@ -310,6 +310,14 @@ header {
   height: 58px;
   border-radius: 32px;
   width: 12%;
+}
+
+.category-height {
+  height: 100px;
+}
+
+.category-img-height {
+  height: 200px;
 }
 
 body {
