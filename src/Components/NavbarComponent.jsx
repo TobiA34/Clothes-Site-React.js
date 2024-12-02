@@ -76,7 +76,7 @@ function NavbarComponent({ onSearch }) {
           <div className="collapse navbar-collapse" id="navbarContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <Link>
+                <Link to='/categories'>
                   <a className="nav-link" href="#">
                     Categories
                   </a>
